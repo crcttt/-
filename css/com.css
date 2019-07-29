@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+img{
+  display:inline-block;vertical-align:middle;border:none;
+}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+li{list-style: none;}
+a:active,a:hover{outline:0}
+a{
+  color:#333;text-decoration:none
+}
+a:hover{color:#777}
+h4,h5,h6{font-size:100%}
+
+button,input,optgroup,option,select,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}
+body{line-height:24px;font:14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif}
+
+.w1200{
+  width: 1200px;
+  margin: auto;
+}
+.d-flex{display: flex; position: relative;}
+
+/* 顶栏 */
+.dinglan-bg{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #e3e4e5;
+}
+.dinglan{
+  /* color: #999;     */
+  position: relative;
+  height: 30px;
+  background-color: #e3e4e5;
+}
+
+.dinglan-left{
+  float: left;
+}
+.dinglan-right{
+  position:absolute;
+  right: 12px;
+  
+}
+.myscheng,.myscheng1,.myscheng2{
+  height: 30px;
+  border:1px solid transparent;
+  text-align: center
+}
+.myscheng{width: 84px;}
+.myscheng1{width: 50px;}
+.myscheng2{width: 56px;}
+
+
+/* 头 */
+.header{
+  background-color:#fff;
+  height: 100px;
+}
+.header-zt{position: relative;}
+.tou-left{
+  width: 200px;
+  line-height: 100px;
+  margin-right: 100px;
+}
+.sousuo{
+  width: 600px;
+  line-height: 100px;
+  border-color: #e1aa61;
+  padding-top: 35px;
+}
+.sousuok{
+  border:1px solid #e1aa61;
+  width: 500px;
+  height: 36px;
+  color: #999;
+  border-width: 2px 0 2px 2px;
+  
+}
+.sousuon{
+  width: 70px;
+  height: 40px;
+  background-color: #e1aa61;
+  border-radius: 0px
+}
+.tou-right{
+  line-height: 100px;    
+}
+.myshop,.myshop1{
+  width: 100px;
+  height: 36px;
+  padding-left: 5px;
+  border:1px solid #dfdfdf;
+  background-color: #f9f9f9;
+  margin-top: 36px;
+  line-height: 36px;
+  color: #e1aa61;
+}
+.myshop1{margin-left: 20px}
+
+
+
+/* 脚 */
+
+.fcenter{
+  justify-content: space-around
+}
+.ft,.fb{
+  border-bottom: 1px solid #aaa;
+  padding:30px 0;
+}
+.ft>li{
+  font-size: 22px;
+  font-weight: 600;   
+}
+.fb>ul{ 
+  font-size: 18px;
+  font-weight: 400;   
+}
+.fb>ul>li{ 
+  font-size: 16px;
+  font-weight: 100;   
+}
+.h3{
+  font-size: 25px;
+  font-weight: 600;
+  padding:30px 0;
+}

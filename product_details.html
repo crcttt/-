@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="layui-v2.4.5/layui/css/layui.css"> 
+  <link rel="stylesheet" href="css/com.css">
+  <link rel="stylesheet" href="css/product_details.css">
+  <script src="js/jquery-1.11.3.js"></script>
+  <title>商品详情</title>
+</head>
+<body>
+  <!-- 顶栏 -->
+  <div class="dinglan-bg">
+    <div class="dinglan w1200">
+      <ul class="dinglan-left" >
+        <li class="dinglan-left">
+          <!-- <i class="layui-icon layui-icon-home"></i> -->
+          <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
+        </li>
+        <li class="dinglan-left"><a href="">位置</a></li>
+      </ul>
+      <ul class="dinglan-right" >
+        <li class="dinglan-left myscheng"><a href="">您好，请登录</a></li>
+        <li class="dinglan-left myscheng1"><a href="">注册</a></li>
+        <li class="dinglan-left myscheng2"><a href="">我的商城</a></li>
+      </ul> 
+    </div>
+  </div>
+  <!-- 头部 -->
+  <div class="header">
+    <div class="w1200 header-zt">
+      <div class="dinglan-left tou-left">
+        <a href="">
+          <span>商城</span>
+        </a>
+      </div>
+
+      <div class="dinglan-left sousuo">
+        <input class="sousuok dinglan-left" type="text">
+        <button class="sousuon dinglan-left layui-btn layui-btn-warm">搜索</button>
+      </div>
+
+      <div class="dinglan-right ">
+
+        <div class="dinglan-left ">
+          <a href="">
+            <div class="myshop">
+              <p>
+                <span>我的购物车</span>
+                <span class="layui-icon layui-icon-cart"></span>
+              </p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- 身 -->
+  <div class="border">
+    <!-- 面包屑 -->
+    <div >
+      <div class="w1200">
+        <ul class="d-flex">
+          <li>
+            <a href="javascript:;">全部分类</a>
+          </li>
+          <li><a href="javascript:;">白酒</a></li>
+          <li><a href="javascript:;">五粮液</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- 商品 -->
+    <div class="w1200">
+      <!-- 上部 -->
+      <div class="d-flex">
+      <!-- 左侧图 -->
+        <div id="imgPro" class="leftImgPro">
+          <img src="img/wly-x-1.jpg" alt="1">
+          <div class="d-flex">
+            <img src="img/disabled-prev.png" alt="">
+            <div>
+              <ul class="d-flex">
+                <li><img src="img/wly-m-1.jpg" alt="1"></li>
+                <li><img src="img/wly-m-2.jpg" alt="2"></li>
+                <li><img src="img/wly-m-3.jpg" alt="3"></li>
+                <li><img src="img/wly-m-4.jpg" alt="4"></li>
+                <li><img src="img/wly-m-5.jpg" alt="5"></li>
+                <li><img src="img/wly-m-5.jpg" alt="5"></li>
+                <li><img src="img/wly-m-5.jpg" alt="5"></li>
+                <li><img src="img/wly-m-5.jpg" alt="5"></li>
+              </ul>
+            </div>
+            <img src="img/disabled-next.png" alt="">
+        </div>
+        </div>
+      <!-- 中商品 -->
+        <div class="pro">
+          <h4>五粮液交杯牌 交杯酒 52度 浓香型白酒 500ML单瓶装</h4>
+          <h5>热卖推荐，品质保证，来自五粮液的精选美酒</h5>
+          <div>
+            <div class="d-flex">
+              <p>价格<i></i></p>
+              <div>￥1199.00</div>
+            </div>
+            <div class="d-flex">
+              <p>促销<i></i></p>
+              <div>购买2件及以上赠送精美礼品一份，赠完即止</div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <p>增值业务<i></i></p>
+            <div>
+              <a href="">礼品包装</a>
+            </div>
+          </div>
+          <div class="d-flex">
+            <p>配送至<i></i></p>
+            <div>
+              <div>
+                <select name="" id="">
+                  <option value="">111</option>
+                </select>
+                <span>剩余5件</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <p>重量<i></i></p>
+            <div>1.4KG</div>
+          </div>
+          <div id="size" class="d-flex">
+            <p>选择规格<i></i></p>
+            <div>
+              <a href="">五粮液52度普五500ml</a>
+              <a href="">【经典爆款】交杯牌 52度 单瓶装</a>
+              <a href="">【高端精美】缘定晶生戒指版</a>
+              <a href="">五粮液52度普五500ml</a>
+              <a href="">【经典爆款】交杯牌 52度 单瓶装</a>
+              <a href="">【高端精美】缘定晶生戒指版</a>
+              <a href="">【高端精美】缘定晶生戒指版</a>
+              <a href="">五粮液52度普五500ml</a>
+              <a href="">【经典爆款】交杯牌 52度 单瓶装</a>
+              <a href="">【高端精美】缘定晶生戒指版</a>
+            </div>
+          </div>
+          <div class="d-flex">
+            <input type="text" value="1">
+            <a href="">+</a>
+            <a href="">-</a>
+            <a href="">加入购物车</a>
+          </div>
+        </div>
+      <!-- 右侧图 -->
+        <div class="look">
+          <!-- 标题 -->
+          <div>
+            <div>
+              <span></span>
+              <span>看了又看</span>
+              <span></span>
+            </div>
+          </div>
+          <!-- 中间图 -->
+          <div>
+            <!-- 内容装入框中，方便移动 -->
+            <div>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥1199.00</p>
+              </a>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥1299.00</p>
+              </a>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥999.00</p>
+              </a>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥1000.00</p>
+              </a>
+            </div>
+          </div>
+          <!-- 下方按钮 -->
+          <div>
+            <img src="img/up.png" alt="">
+            <img src="img/down.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- 推荐 -->
+      <div class="recommend">
+        <div >
+          <div>店长推荐</div>
+        </div>
+        <ul class="d-flex">
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <p>五粮液52度普五 500ML（新老包装随机发货）</p>
+              <p>￥1258.00</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 下部 详情-->
+      <div class="det d-flex">
+        <!-- 左侧栏热销 -->
+        <div>
+          <div>店铺热销</div>
+          <ul>
+            <li>
+              <a href="">
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
+              </a>
+              <div class="d-flex">
+                <div>1</div>
+                <div>畅销0000件</div>
+                <div>￥1199.00</div>
+              </div>
+            </li>
+            <li>
+              <a href="">
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
+              </a>
+              <div class="d-flex">
+                <div>2</div>
+                <div>畅销0000件</div>
+                <div>￥1199.00</div>
+              </div>
+            </li>
+            <li>
+              <a href="">
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
+              </a>
+              <div class="d-flex">
+                <div>3</div>
+                <div>畅销0000件</div>
+                <div>￥1199.00</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 右主体商品介绍 -->
+        <div>
+          <!-- 导航签 -->
+          <ul id="pul" class="d-flex">
+            <li class="checked" >商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+            <li>商品评价</li>
+          </ul>
+          <!-- 参数 -->
+          <div id="pul1">
+            <p>品牌：<span>五粮液（WULIANGYE）</span></p>
+            <ul class="d-flex">
+              <li>商品名称：<span>五粮液白酒</span></li>
+              <li>商品编号：<span>5808181</span></li>
+              <li>商品毛重：<span>1.4kg</span></li>
+              <li>商品产地：<span>中国大陆</span></li>
+              <li>香型：<span>浓香</span></li>
+              <li>包装：<span>单瓶</span></li>
+              <li>容量：<span>375mL-500mL</span></li>
+              <li>度数：<span>50度以上</span></li>
+            </ul>
+            <a href="">更多参数&gt;&gt;</a>
+            <!-- 更多参数 -->
+            <div></div>
+          </div>
+          <!-- 介绍图 -->
+          <div>
+            <img src="img/wly-xq-1.jpg" alt="">
+            <img src="img/wly-xq-2.jpg" alt="">
+            <img src="img/wly-xq-3.jpg" alt="">
+            <img src="img/wly-xq-4.jpg" alt="">
+          </div>
+          <!-- 售后保障 -->
+          <div id="pul3">
+            <div><p>售后保障</p></div>
+            <ul>
+              <li class="d-flex">
+                <i class="layui-icon layui-icon-ok-circle"></i>
+                <div>
+                  <p>厂家服务</p>
+                  <p>本产品全国联保，享受三包服务，质保期为：无质保</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <i class="layui-icon layui-icon-ok-circle"></i>
+                <div>
+                  <p>商家承诺</p>
+                  <p>卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
+                    <br>
+                    注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <i class="layui-icon layui-icon-ok-circle"></i>
+                <div>
+                  <p>正品行货</p>
+                  <p>保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <i class="layui-icon layui-icon-ok-circle"></i>
+                <div>
+                  <p>全国联保</p>
+                  <p>凭质保证书及发票，可享受全国联保服务（奢侈品、钟表除外），与您亲临商场选购的商品享受相同的质量保证。商城还为您提供具有竞争力的商品价格和运费政策，请您放心购买！<br> <br>
+                  注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 商品评价 -->
+          <div id="pul4">
+            <div><p>商品评价</p></div>
+            <!-- 好评度 -->
+            <div class="d-flex">
+              <div>
+                <p>好评度</p>
+                <p>99%</p>
+              </div>
+              <ul class="d-flex">
+                <li>完好无损(<span>xx</span>)</li>
+                <li>味正醇香(<span>xx</span>)</li>
+                <li>好喝不醉(<span>xx</span>)</li>
+                <li>收藏佳品(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+                <li>完好无损(<span>xx</span>)</li>
+              </ul>
+            </div>
+            <!-- 评价 -->
+            <div>
+              <!-- ul标题 -->
+              <ul class="d-flex">
+                <li class="detActive">全部评价(<span>xxxx+</span>)</li>
+                <li>追评(<span>xx+</span>)</li>
+                <li>中评(<span>xx+</span>)</li>
+                <li>差评(<span>xx+</span>)</li>
+              </ul>
+              <!-- 评价内容 -->
+              <div>
+                <!-- 每个用户 -->
+                <div class="d-flex use">
+                  <!-- 用户信息 -->
+                  <div class="useXinxi">
+                    <div><img src="img/tongixang.jpg" alt="头像">用户名111111111111111111111</div>
+                    <div>PLUS会员</div>
+                  </div>
+                  <!-- 评价 -->
+                  <div class="pingJia">
+                    <!-- 星 -->
+                    <div>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star-fill"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                    
+                    </div>
+                    <!-- 评价 -->
+                    <p>
+                      这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价，
+                    </p>
+                    <!-- 图 -->
+                    <div>
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                    </div>
+                    <!-- 购买商品 -->
+                    <div class="d-flex">
+                      <div>
+                        <span>五粮液 缘定晶生戒指版 </span>
+                        <span>2019-01-24 21:50</span>
+                      </div>
+                      <div>
+                        <a href="">举报</a>
+                        <a class="layui-icon layui-icon-praise" href="">00</a>
+                        <a class="layui-icon layui-icon-dialogue" href="">00</a>
+                      </div>
+                    </div>
+                    <!--商家回复 -->
+                    <div>
+                      <p>商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复</p>
+                      <p>2019.6.29</p>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- 每个用户 -->
+                <div class="d-flex use">
+                  <!-- 用户信息 -->
+                  <div class="useXinxi">
+                    <div><img src="img/tongixang.jpg" alt="头像">用户名111111111111111111111</div>
+                    <div>PLUS会员</div>
+                  </div>
+                  <!-- 评价 -->
+                  <div class="pingJia">
+                    <!-- 星 -->
+                    <div>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star-fill"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+                      <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
+
+                    </div>
+                    <!-- 评价 -->
+                    <p>
+                      这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价， 这是评价，
+                    </p>
+                    <!-- 图 -->
+                    <div>
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                      <img src="img/绝对伏特加（Absolut Vodka）洋酒 敢爱为先系列限量版绿瓶 700ml.jpg" alt="">
+                    </div>
+                    <!-- 购买商品 -->
+                    <div class="d-flex">
+                      <div>
+                        <span>五粮液 缘定晶生戒指版 </span>
+                        <span>2019-01-24 21:50</span>
+                      </div>
+                      <div>
+                        <a href="">举报</a>
+                        <a class="layui-icon layui-icon-praise" href="">00</a>
+                        <a class="layui-icon layui-icon-dialogue" href="">00</a>
+                      </div>
+                    </div>
+                    <!--商家回复 -->
+                    <div>
+                      <p>商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复</p>
+                      <p>2019.6.29</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- 页数 -->
+                <div class="spPage">
+                  <ul class="d-flex">
+                    <li><a href="javascript:;">上一页</a></li>
+                    <li><a href="javascript:;">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">下一页</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- 脚 -->
+  <div class="footer w1200">
+    <ul class="d-flex fcenter ft">
+      <li>品类齐全，轻松购物</li>
+      <li>多仓直发，极速配送</li>
+      <li>正品行货，精致服务</li>
+      <li>天天低价，畅选无忧</li>
+    </ul>
+    <div class="d-flex fcenter fb">
+      <ul>
+        购物指南
+        <li><a href="">购物流程</a></li>
+        <li><a href="">会员介绍</a></li>
+        <li><a href="">生活旅行/团购</a></li>
+        <li><a href="">常见问题</a></li>
+        <li><a href="">大家电</a></li>
+        <li><a href="">联系客服</a></li>
+      </ul>
+      <ul>
+        配送方式
+        <li><a href="">上门自提</a></li>
+        <li><a href="">配送服务查询</a></li>
+        <li><a href="">配送费收取标准</a></li>
+        <li><a href="">海外配送</a></li>
+      </ul>
+      <ul>
+        支付方式
+        <li><a href="">货到付款</a></li>
+        <li><a href="">在线支付</a></li>
+        <li><a href="">分期付款</a></li>
+      </ul>
+      <ul>
+        售后服务
+        <li><a href="">售后政策</a></li>
+        <li><a href="">价格保护</a></li>
+        <li><a href="">退款说明</a></li>
+        <li><a href="">返修/退换货物</a></li>
+        <li><a href="">取消订单</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="./js/product_details.js"></script>
+</body>
+</html>
