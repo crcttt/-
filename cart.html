@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="layui-v2.4.5/layui/css/layui.css">
+  <link rel="stylesheet" href="css/com.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <script src="js/jquery-1.11.3.js"></script>
+  <title>购物车</title>
+
+
+</head>
+
+<body>
+  <!-- 顶栏 -->
+  <div class="dinglan-bg">
+    <div class="dinglan w1200">
+      <ul class="dinglan-left">
+        <li class="dinglan-left">
+          <!-- <i class="layui-icon layui-icon-home"></i> -->
+          <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
+        </li>
+
+      </ul>
+      <ul class="dinglan-right">
+        <li class="dinglan-left myscheng"><a href="">您好，请登录</a></li>
+        <li class="dinglan-left myscheng1"><a href="">注册</a></li>
+        <li class="dinglan-left myscheng2"><a href="">我的商城</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 头部 -->
+  <div class="header">
+    <div class="w1200 header-zt">
+      <div class="dinglan-left tou-left">
+        <a href="">
+          <h2>商城</h2>
+        </a>
+      </div>
+
+      <div class="dinglan-left sousuo">
+        <input class="sousuok dinglan-left" type="text">
+        <button class="sousuon dinglan-left layui-btn layui-btn-warm">搜索</button>
+      </div>
+
+      <div class="dinglan-right ">
+
+        <div class="dinglan-left ">
+          <a href="">
+            <div class="myshop">
+              <p>
+                <span>我的购物车</span>
+                <span class="layui-icon layui-icon-cart"></span>
+              </p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="cart w1200">
+    <div class="myC">我的购物车</div>
+    <!-- 全选 -->
+    <div class="selectAll">
+      <div><input type="checkbox">全选</div>
+      <div>购物车数量：<span style="color:red;fontSize:20px">5</span></div>
+    </div>
+    <!-- 商品列表 -->
+    <div>
+      <div class="cart-item">
+        <div class="leftImgText">
+          <input type="checkbox">
+          <img src="img/c-1-2.jpg">
+          <div class="price">商品11111</div>
+          <div class="sl">
+            <button>-</button>
+            <input type="text" value="1">
+            <button>+</button>
+          </div>
+          <div class="price">数量单价111</div>
+          <div class="price">数量总价价111</div>
+        </div>
+        <button class="layui-btn layui-btn-danger">删除</button>
+      </div>
+    </div>
+    <div class="d-f">
+      <!-- 删除选中商品 -->
+      <button class="delall layui-btn layui-btn-danger">删除选中商品</button>
+      <div class="zf">
+        <div>总价：<span style="color:red;fontSize:20px">5</span></div>
+        <button class="delall layui-btn layui-btn-danger">确认支付</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- 脚 -->
+  <div class="footer w1200">
+    <ul class="d-flex fcenter ft">
+      <li>品类齐全，轻松购物</li>
+      <li>多仓直发，极速配送</li>
+      <li>正品行货，精致服务</li>
+      <li>天天低价，畅选无忧</li>
+    </ul>
+    <div class="d-flex fcenter fb">
+      <ul>
+        购物指南
+        <li><a href="">购物流程</a></li>
+        <li><a href="">会员介绍</a></li>
+        <li><a href="">生活旅行/团购</a></li>
+        <li><a href="">常见问题</a></li>
+        <li><a href="">大家电</a></li>
+        <li><a href="">联系客服</a></li>
+      </ul>
+      <ul>
+        配送方式
+        <li><a href="">上门自提</a></li>
+        <li><a href="">配送服务查询</a></li>
+        <li><a href="">配送费收取标准</a></li>
+        <li><a href="">海外配送</a></li>
+      </ul>
+      <ul>
+        支付方式
+        <li><a href="">货到付款</a></li>
+        <li><a href="">在线支付</a></li>
+        <li><a href="">分期付款</a></li>
+      </ul>
+      <ul>
+        售后服务
+        <li><a href="">售后政策</a></li>
+        <li><a href="">价格保护</a></li>
+        <li><a href="">退款说明</a></li>
+        <li><a href="">返修/退换货物</a></li>
+        <li><a href="">取消订单</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

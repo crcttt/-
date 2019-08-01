@@ -1,0 +1,79 @@
+.cart {
+  min-height: 600px
+}
+
+.myC {
+  height: 30px;
+  background: #eee;
+  line-height: 30px;
+  padding: 0 5px;
+}
+
+.selectAll {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*垂直居中*/
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+}
+
+.leftImgText {
+  display: flex;
+  align-items: center;
+  /*垂直居中*/
+  justify-content: space-around;
+  width: 80%;
+}
+
+.leftImgText img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.leftImgText input {
+  display: block;
+
+}
+
+.sl {
+  display: flex;
+  justify-content: center
+}
+
+.sl button {
+  width: 15%;
+}
+
+.sl input {
+  width: 20%;
+  text-align: center
+}
+
+.d-f {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*垂直居中*/
+
+}
+
+.zf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*垂直居中*/
+  width: 15%;
+}
+
+.delall {
+  margin: 5px;
+}

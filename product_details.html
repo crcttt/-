@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="layui-v2.4.5/layui/css/layui.css"> 
+  <link rel="stylesheet" href="layui-v2.4.5/layui/css/layui.css">
   <link rel="stylesheet" href="css/com.css">
   <link rel="stylesheet" href="css/product_details.css">
   <script src="js/jquery-1.11.3.js"></script>
   <title>商品详情</title>
 </head>
+
 <body>
   <!-- 顶栏 -->
   <div class="dinglan-bg">
     <div class="dinglan w1200">
-      <ul class="dinglan-left" >
+      <ul class="dinglan-left">
         <li class="dinglan-left">
           <!-- <i class="layui-icon layui-icon-home"></i> -->
           <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
         </li>
-        <li class="dinglan-left"><a href="">位置</a></li>
+
       </ul>
-      <ul class="dinglan-right" >
+      <ul class="dinglan-right">
         <li class="dinglan-left myscheng"><a href="">您好，请登录</a></li>
         <li class="dinglan-left myscheng1"><a href="">注册</a></li>
         <li class="dinglan-left myscheng2"><a href="">我的商城</a></li>
-      </ul> 
+      </ul>
     </div>
   </div>
   <!-- 头部 -->
@@ -34,7 +36,7 @@
     <div class="w1200 header-zt">
       <div class="dinglan-left tou-left">
         <a href="">
-          <span>商城</span>
+          <h2>酒水商城</h2>
         </a>
       </div>
 
@@ -63,7 +65,7 @@
   <!-- 身 -->
   <div class="border">
     <!-- 面包屑 -->
-    <div >
+    <div>
       <div class="w1200">
         <ul class="d-flex">
           <li>
@@ -79,34 +81,37 @@
     <div class="w1200">
       <!-- 上部 -->
       <div class="d-flex">
-      <!-- 左侧图 -->
+        <!-- 左侧图 -->
         <div id="imgPro" class="leftImgPro">
-          <img src="img/wly-x-1.jpg" alt="1">
+          <img id="mimg" src="img/wly-x-1.jpg" alt="1">
+          <div id="mask" class="d-none"></div>
+          <div id="super-mask"></div>
+          <div id="div-lg" class="d-none"></div>
           <div class="d-flex">
-            <img src="img/disabled-prev.png" alt="">
+            <img id="btn-left" class="disabled" src="img/disabled-prev.png" alt="">
             <div>
-              <ul class="d-flex">
-                <li><img src="img/wly-m-1.jpg" alt="1"></li>
+              <ul id="ul-imgs" class="d-flex">
+                <!-- <li><img src="img/wly-m-1.jpg" alt="1"></li>
                 <li><img src="img/wly-m-2.jpg" alt="2"></li>
                 <li><img src="img/wly-m-3.jpg" alt="3"></li>
                 <li><img src="img/wly-m-4.jpg" alt="4"></li>
                 <li><img src="img/wly-m-5.jpg" alt="5"></li>
                 <li><img src="img/wly-m-5.jpg" alt="5"></li>
                 <li><img src="img/wly-m-5.jpg" alt="5"></li>
-                <li><img src="img/wly-m-5.jpg" alt="5"></li>
+                <li><img src="img/wly-m-5.jpg" alt="5"></li> -->
               </ul>
             </div>
-            <img src="img/disabled-next.png" alt="">
+            <img id="btn-right" src="img/disabled-next.png" alt="">
+          </div>
         </div>
-        </div>
-      <!-- 中商品 -->
+        <!-- 中商品 -->
         <div class="pro">
-          <h4>五粮液交杯牌 交杯酒 52度 浓香型白酒 500ML单瓶装</h4>
-          <h5>热卖推荐，品质保证，来自五粮液的精选美酒</h5>
+          <h4 id="title">五粮液交杯牌 交杯酒 52度 浓香型白酒 500ML单瓶装</h4>
+          <h5 id="subtitle">热卖推荐，品质保证，来自五粮液的精选美酒</h5>
           <div>
             <div class="d-flex">
               <p>价格<i></i></p>
-              <div>￥1199.00</div>
+              <div id="price">￥1199.00</div>
             </div>
             <div class="d-flex">
               <p>促销<i></i></p>
@@ -120,24 +125,13 @@
             </div>
           </div>
           <div class="d-flex">
-            <p>配送至<i></i></p>
-            <div>
-              <div>
-                <select name="" id="">
-                  <option value="">111</option>
-                </select>
-                <span>剩余5件</span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex">
             <p>重量<i></i></p>
             <div>1.4KG</div>
           </div>
           <div id="size" class="d-flex">
             <p>选择规格<i></i></p>
-            <div>
-              <a href="">五粮液52度普五500ml</a>
+            <div id="specs">
+              <!-- <a class="active" href="">五粮液52度普五500ml</a>
               <a href="">【经典爆款】交杯牌 52度 单瓶装</a>
               <a href="">【高端精美】缘定晶生戒指版</a>
               <a href="">五粮液52度普五500ml</a>
@@ -146,17 +140,17 @@
               <a href="">【高端精美】缘定晶生戒指版</a>
               <a href="">五粮液52度普五500ml</a>
               <a href="">【经典爆款】交杯牌 52度 单瓶装</a>
-              <a href="">【高端精美】缘定晶生戒指版</a>
+              <a href="">【高端精美】缘定晶生戒指版</a> -->
             </div>
           </div>
           <div class="d-flex">
-            <input type="text" value="1">
-            <a href="">+</a>
-            <a href="">-</a>
-            <a href="">加入购物车</a>
+            <input id="s" type="text" value="1">
+            <a id="jia" href="javascript:;">+</a>
+            <a id="jian" href="javascript:;">-</a>
+            <a href="javascript:;">加入购物车</a>
           </div>
         </div>
-      <!-- 右侧图 -->
+        <!-- 右侧图 -->
         <div class="look">
           <!-- 标题 -->
           <div>
@@ -169,7 +163,7 @@
           <!-- 中间图 -->
           <div>
             <!-- 内容装入框中，方便移动 -->
-            <div>
+            <div id="trtj">
               <a href="">
                 <img src="img/wly-k-1.jpg" alt="">
                 <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
@@ -190,59 +184,69 @@
                 <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
                 <p>￥1000.00</p>
               </a>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥1000.00</p>
+              </a>
+              <a href="">
+                <img src="img/wly-k-1.jpg" alt="">
+                <p>五粮液 浓香型白酒 45度 500ml 单瓶装</p>
+                <p>￥1000.00</p>
+              </a>
             </div>
           </div>
           <!-- 下方按钮 -->
           <div>
-            <img src="img/up.png" alt="">
-            <img src="img/down.png" alt="">
+            <img id="up" src="img/up.png" alt="">
+            <img id="down" src="img/down.png" alt="">
           </div>
         </div>
       </div>
       <!-- 推荐 -->
       <div class="recommend">
-        <div >
+        <div>
           <div>店长推荐</div>
         </div>
         <ul class="d-flex">
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
               <p>￥1258.00</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）</p>
               <p>￥1258.00</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）</p>
               <p>￥1258.00</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）</p>
               <p>￥1258.00</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）</p>
               <p>￥1258.00</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+              <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
               <p>五粮液52度普五 500ML（新老包装随机发货）</p>
               <p>￥1258.00</p>
             </a>
@@ -257,7 +261,7 @@
           <ul>
             <li>
               <a href="">
-                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
                 <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
               </a>
               <div class="d-flex">
@@ -268,7 +272,7 @@
             </li>
             <li>
               <a href="">
-                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
                 <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
               </a>
               <div class="d-flex">
@@ -279,7 +283,7 @@
             </li>
             <li>
               <a href="">
-                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货" >
+                <img src="img/dianzhabng-tuijian-wly-1.jpg" alt="五粮液52度普五 500ML（新老包装随机发货">
                 <p>五粮液52度普五 500ML（新老包装随机发货）111111111111111111111111</p>
               </a>
               <div class="d-flex">
@@ -294,7 +298,7 @@
         <div>
           <!-- 导航签 -->
           <ul id="pul" class="d-flex">
-            <li class="checked" >商品介绍</li>
+            <li class="checked">商品介绍</li>
             <li>规格与包装</li>
             <li>售后保障</li>
             <li>商品评价</li>
@@ -325,7 +329,9 @@
           </div>
           <!-- 售后保障 -->
           <div id="pul3">
-            <div><p>售后保障</p></div>
+            <div>
+              <p>售后保障</p>
+            </div>
             <ul>
               <li class="d-flex">
                 <i class="layui-icon layui-icon-ok-circle"></i>
@@ -340,7 +346,8 @@
                   <p>商家承诺</p>
                   <p>卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
                     <br>
-                    注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
+                    注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+                  </p>
                 </div>
               </li>
               <li class="d-flex">
@@ -355,14 +362,17 @@
                 <div>
                   <p>全国联保</p>
                   <p>凭质保证书及发票，可享受全国联保服务（奢侈品、钟表除外），与您亲临商场选购的商品享受相同的质量保证。商城还为您提供具有竞争力的商品价格和运费政策，请您放心购买！<br> <br>
-                  注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解</p>
+                    注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解
+                  </p>
                 </div>
               </li>
             </ul>
           </div>
           <!-- 商品评价 -->
           <div id="pul4">
-            <div><p>商品评价</p></div>
+            <div>
+              <p>商品评价</p>
+            </div>
             <!-- 好评度 -->
             <div class="d-flex">
               <div>
@@ -412,7 +422,7 @@
                       <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
                       <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
                       <a href="javascript:;" class="pingJiaX layui-icon layui-icon-star"></a>
-                    
+
                     </div>
                     <!-- 评价 -->
                     <p>
@@ -438,7 +448,9 @@
                     </div>
                     <!--商家回复 -->
                     <div>
-                      <p>商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复</p>
+                      <p>
+                        商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复
+                      </p>
                       <p>2019.6.29</p>
                     </div>
                   </div>
@@ -486,7 +498,9 @@
                     </div>
                     <!--商家回复 -->
                     <div>
-                      <p>商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复</p>
+                      <p>
+                        商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复商家回复
+                      </p>
                       <p>2019.6.29</p>
                     </div>
                   </div>
@@ -560,4 +574,5 @@
   </div>
   <script src="./js/product_details.js"></script>
 </body>
+
 </html>

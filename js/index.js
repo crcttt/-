@@ -1,18 +1,17 @@
-window.onload = function () {
-
+window.onload = function() {
   var lbrb = document.getElementsByClassName("lbr-bottom");
-  bdown.onclick = function () {
+  bdown.onclick = function() {
     lbrb[0].style.height = "283px";
-  }
-  bup.onclick = function () {
+  };
+  bup.onclick = function() {
     lbrb[0].style.height = 0;
-  }
+  };
 
-  var hlb = document.querySelectorAll(".help-left-botton>div")
+  var hlb = document.querySelectorAll(".help-left-botton>div");
   var hlt = document.querySelectorAll(".help-left-top>ul>li");
   for (let i = 0; i < hlt.length; i++) {
     //悬停改变样式与显示
-    hlt[i].onmouseover = function () {
+    hlt[i].onmouseover = function() {
       for (let j = 0; j < hlb.length; j++) {
         if (j == i) {
           hlb[j].style.display = "block";
@@ -22,7 +21,7 @@ window.onload = function () {
           hlt[j].className = "sty-2";
         }
       }
-    }
+    };
   }
   var ct = document.querySelectorAll(".cen-top>li");
   var cta = document.querySelectorAll(".cen-top>li>a");
@@ -52,14 +51,14 @@ window.onload = function () {
       }   
   }  */
   for (let j = 0; j < ct.length; j++) {
-    ct[j].onmouseover = function () {
+    ct[j].onmouseover = function() {
       var n = parseInt(j / 5);
       var und = document.querySelectorAll(".cen-top>div");
       var w = und[n].offsetWidth;
       //获取左边距
       var m = getComputedStyle(und[n]).marginLeft;
       m = parseInt(m);
-      und[n].style.left = `${j%5*(w+m*2)}px`
+      und[n].style.left = `${(j % 5) * (w + m * 2)}px`;
       if (j % 5 == 0 || j == 0) {
         cenb[j].style.display = "block";
         cenb[j + 1].style.display = "none";
@@ -120,122 +119,140 @@ window.onload = function () {
         cta[j - 2].className = "li2";
         cta[j - 1].className = "li2";
       }
-    }
+    };
   }
+};
 
-}
-
-$(function () {
-
+$(function() {
   if (location.search == "") {
-    $.ajax({ //轮播图
+    $.ajax({
+      //轮播图
       url: "http://127.0.0.1:3000/index/carousel",
       type: "get",
       data: {},
       dataType: "json",
-      success: function (result) {
+      success: function(result) {
         //console.log(result)
-        var html = ""
+        var html = "";
         for (var c of result) {
-          html += `<div><a href="http://127.0.0.1:3000/${c.href}"><img src="${c.img}" alt=""></a></div>`
+          html += `<div><a href="http://127.0.0.1:3000/${c.href}"><img src="${
+            c.img
+          }" alt=""></a></div>`;
           //html+=`<div><img src="${c.img}" alt=""></div>`
         }
-        console.log(html)
-        $("#lb>div:first-child").html(html)
+        $("#lb>div:first-child").html(html);
         //轮播控制
-        layui.use('carousel', function () {
+        layui.use("carousel", function() {
           var carousel = layui.carousel;
           //建造实例
           carousel.render({
-            elem: '#lb',
-            width: '100%' //设置容器宽度
-              ,
-            height: '100%',
-            interval: '5000',
-            arrow: 'always' //始终显示箭头
-              ,
-            anim: 'default' //切换动画方式
+            elem: "#lb",
+            width: "100%", //设置容器宽度
+            height: "100%",
+            interval: "5000",
+            arrow: "always", //始终显示箭头
+            anim: "default" //切换动画方式
           });
         });
-
       }
-    })
+    });
 
-    $.ajax({ //帮你挑
+    $.ajax({
+      //帮你挑
       url: "http://127.0.0.1:3000/index/producttj",
       type: "get",
       data: {},
       dataType: "json",
-      success: function (result) {
-        console.log(result);
+      success: function(result) {
         var html = "";
         for (var s of result.songli) {
           html += `
           <div>
-            <a href="${s.href}">
+            <a href="product_details.html?lid=${s.l_id}">
               <img class = "maf" src="http://127.0.0.1:3000/${s.img_url}">
               <p> ${s.title}</p>
               <p>￥${s.price}</p>
             </a>
           </div>
-          `
+          `;
         }
         $("#songli").html(html);
         var html = "";
         for (var s of result.ziyin) {
           html += `
           <div>
-            <a href="${s.href}">
+            <a href="product_details.html?lid=${s.l_id}">
               <img class = "maf" src="http://127.0.0.1:3000/${s.img_url}">
               <p> ${s.title}</p>
               <p>￥${s.price}</p>
             </a>
           </div>
-          `
+          `;
         }
-        $("#ziyin").html(html)
+        $("#ziyin").html(html);
         var html = "";
         for (var s of result.qinpeng) {
           html += `
           <div>
-            <a href="${s.href}">
+            <a href="product_details.html?lid=${s.l_id}">
               <img class = "maf" src="http://127.0.0.1:3000/${s.img_url}">
               <p> ${s.title}</p>
               <p>￥${s.price}</p>
             </a>
           </div>
-          `
+          `;
         }
-        $("#qinpeng").html(html)
+        $("#qinpeng").html(html);
         var html = "";
         for (var s of result.qinglv) {
           html += `
           <div>
-            <a href="${s.href}">
+            <a href="product_details.html?lid=${s.l_id}">
               <img class = "maf" src="http://127.0.0.1:3000/${s.img_url}">
               <p> ${s.title}</p>
               <p>￥${s.price}</p>
             </a>
           </div>
-          `
+          `;
         }
-        $("#qinglv").html(html)
+        $("#qinglv").html(html);
         var html = "";
         for (var s of result.yanqing) {
           html += `
           <div>
-            <a href="${s.href}">
+            <a href="product_details.html?lid=${s.l_id}">
               <img class = "maf" src="http://127.0.0.1:3000/${s.img_url}">
               <p> ${s.title}</p>
               <p>￥${s.price}</p>
             </a>
           </div>
-          `
+          `;
         }
-        $("#yanqing").html(html)
+        $("#yanqing").html(html);
       }
-    })
+    });
   }
 
+  //用户信息
+  var un = sessionStorage.getItem("uname");
+  if (un) {
+    var str = `
+      <li class="dinglan-left myscheng"><a href="javascript:;">${un}</a></li>
+      <li class="dinglan-left myscheng1"><a href="javascript:add();">退出</a></li>
+      <li class="dinglan-left myscheng2"><a href="javascript:;" >我的商城</a></li> `;
+    $("#msg").html(str);
+  } else {
+    var str = `
+      <li class="dinglan-left myscheng"><a href="login.html">您好，请登录</a></li>
+      <li class="dinglan-left myscheng1"><a href="login.html">注册</a></li >
+      <li class="dinglan-left myscheng2"><a href="javascript:;">我的商城</a></li>`;
+    $("#msg").html(str);
+  }
+});
 
-})
+function add() {
+  sessionStorage.removeItem("uname");
+  setInterval(function() {
+    location.href = "index.html";
+  }, 500);
+}
