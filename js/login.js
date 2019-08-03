@@ -105,6 +105,9 @@ $(document).ready(function () {
     $.ajax({ //验证用户名
       url: "http://127.0.0.1:3000/user/login",
       type: "post",
+      xhrFields: {
+        withCredentials: true
+      },
       data: {
         uname,
         upwd

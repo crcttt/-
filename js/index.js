@@ -1,9 +1,9 @@
-window.onload = function() {
+window.onload = function () {
   var lbrb = document.getElementsByClassName("lbr-bottom");
-  bdown.onclick = function() {
+  bdown.onclick = function () {
     lbrb[0].style.height = "283px";
   };
-  bup.onclick = function() {
+  bup.onclick = function () {
     lbrb[0].style.height = 0;
   };
 
@@ -11,7 +11,7 @@ window.onload = function() {
   var hlt = document.querySelectorAll(".help-left-top>ul>li");
   for (let i = 0; i < hlt.length; i++) {
     //悬停改变样式与显示
-    hlt[i].onmouseover = function() {
+    hlt[i].onmouseover = function () {
       for (let j = 0; j < hlb.length; j++) {
         if (j == i) {
           hlb[j].style.display = "block";
@@ -51,7 +51,7 @@ window.onload = function() {
       }   
   }  */
   for (let j = 0; j < ct.length; j++) {
-    ct[j].onmouseover = function() {
+    ct[j].onmouseover = function () {
       var n = parseInt(j / 5);
       var und = document.querySelectorAll(".cen-top>div");
       var w = und[n].offsetWidth;
@@ -123,7 +123,7 @@ window.onload = function() {
   }
 };
 
-$(function() {
+$(function () {
   if (location.search == "") {
     $.ajax({
       //轮播图
@@ -131,18 +131,18 @@ $(function() {
       type: "get",
       data: {},
       dataType: "json",
-      success: function(result) {
+      success: function (result) {
         //console.log(result)
         var html = "";
         for (var c of result) {
-          html += `<div><a href="http://127.0.0.1:3000/${c.href}"><img src="${
+          html += `<div><a href="${c.href}"><img src="${
             c.img
           }" alt=""></a></div>`;
           //html+=`<div><img src="${c.img}" alt=""></div>`
         }
         $("#lb>div:first-child").html(html);
         //轮播控制
-        layui.use("carousel", function() {
+        layui.use("carousel", function () {
           var carousel = layui.carousel;
           //建造实例
           carousel.render({
@@ -163,7 +163,7 @@ $(function() {
       type: "get",
       data: {},
       dataType: "json",
-      success: function(result) {
+      success: function (result) {
         var html = "";
         for (var s of result.songli) {
           html += `
@@ -232,27 +232,4 @@ $(function() {
       }
     });
   }
-
-  //用户信息
-  var un = sessionStorage.getItem("uname");
-  if (un) {
-    var str = `
-      <li class="dinglan-left myscheng"><a href="javascript:;">${un}</a></li>
-      <li class="dinglan-left myscheng1"><a href="javascript:add();">退出</a></li>
-      <li class="dinglan-left myscheng2"><a href="javascript:;" >我的商城</a></li> `;
-    $("#msg").html(str);
-  } else {
-    var str = `
-      <li class="dinglan-left myscheng"><a href="login.html">您好，请登录</a></li>
-      <li class="dinglan-left myscheng1"><a href="login.html">注册</a></li >
-      <li class="dinglan-left myscheng2"><a href="javascript:;">我的商城</a></li>`;
-    $("#msg").html(str);
-  }
 });
-
-function add() {
-  sessionStorage.removeItem("uname");
-  setInterval(function() {
-    location.href = "index.html";
-  }, 500);
-}
