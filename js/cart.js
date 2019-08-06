@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  $.ajax({ //验证用户名
+  $.ajax({
+    //验证用户名
     url: "http://127.0.0.1:3000/user/cart",
     type: "get",
     data: {},
@@ -8,71 +9,186 @@ $(document).ready(function () {
     },
     dataType: "json",
     success: function (result) {
-      console.log(result)
+      console.log(result);
       if (result.code == -1) {
-        alert("请登录")
-        location.href = "index.html"
+        alert("请登录");
+        location.href = "index.html";
       }
 
       var html = "";
       var zj = 0;
-      var msg = result.msg
+      var zs = 0;
+      var msg = result.msg;
       for (var item of msg) {
-        item.cb = true
+        item.cb = true;
       }
-      console.log(msg)
+      console.log(msg);
 
-      function long() {
-        for (const res of msg) {
-          html += `
+      //function long() {
+      html = "";
+      zj = 0;
+      zs = 0;
+      for (const res of msg) {
+        html += `
         <div class="cart-item" data-id="${res.id}">
           <div class="leftImgText">
-           <input type="checkbox" ${res.cb?"checked":""} data-id="${res.id}" class="select">
+           <input type="checkbox" ${res.cb ? "checked" : ""} data-id="${
+            res.id
+          }" class="select">
            <img src="${res.img_url}">
            <div class="price">${res.title}</div>
           <div class="sl">
-            <button>-</button><input type ="text" data-id="${res.id}" value="${res.count}">
-            <button>+</button></div>
+            <button class="sub" data-id="${res.id}">-</button><input type ="text" data-id="${res.id}" value="${
+            res.count
+          }">
+            <button class="add" data-id="${res.id}">+</button></div>
            <div class="price">单价：${res.price}</div> 
-           <div>小计：${res.price*res.count}</div>
+           <div>小计：${res.price * res.count}</div>
           </div>
-          <button class="layui-btn layui-btn-danger del" data-id="${res.id}">删除</button>
+          <button class="layui-btn layui-btn-danger del" data-id="${
+            res.id
+          }">删除</button>
         </div>
-        `
-          if (res.cb == true) {
-            zj += res.price * res.count
-          }
+        `;
+        if (res.cb == true) {
+          zj += res.price * res.count;
+          zs += res.count;
         }
-        $("#pics").html(html)
-        $("#zpris").html(zj)
-        $("#zs").html(msg.length)
-        html = ""
       }
-      long()
+      $("#pics").html(html);
+      $("#zpris").html(zj);
+      $("#zs").html(zs);
+      //}
+      //long();
       $("#selectALL").change(function (e) {
         var cb = e.target.checked;
-        console.log(cb)
+        console.log(cb);
         for (var item of msg) {
-          item.cb = cb
+          item.cb = cb;
         }
-        long()
-      })
+        if (cb) {
+          $(".select").prop("checked", true);
+        } else {
+          $(".select").removeAttr("checked");
+        }
+        zj = 0;
+        zs = 0;
+        for (const m of msg) {
+          if (m.cb == true) {
+            zj += m.price * m.count;
+            zs += m.count;
+          }
+        }
+        $("#zpris").html(zj);
+        $("#zs").html(zs);
+        console.log(msg)
+      });
       $(".select").change(function (e) {
+        e.stopPropagation();
         var cb = e.target.checked;
-        var i = $(e.target).attr("data-id");
-        console.log(i)
-        console.log(cb)
+        var msgid = $(e.target).attr("data-id");
+        console.log(msgid);
+        console.log(cb);
+        for (let i = 0; i < msg.length; i++) {
+          if (msg[i].id == msgid) {
+            msg[i].cb = cb;
+          }
+        }
+        console.log(msg);
+        var n = 0;
+        for (let j = 0; j < msg.length; j++) {
+          if (msg[j].cb == false) {
+            $("#selectALL").removeAttr("checked");
+          } else {
+            n++;
+          }
+        }
+        console.log(n);
+        if (n == msg.length) {
+          //$("#selectALL").attr("checked", true);
+          $("#selectALL").prop("checked", true);
+        }
+        zj = 0;
+        zs = 0;
+        for (const m of msg) {
+          if (m.cb == true) {
+            zj += m.price * m.count;
+            zs += m.count;
+          }
+        }
+        $("#zpris").html(zj);
+        $("#zs").html(zs);
+        console.log(msg)
+      });
 
+      $(".layui-btn.layui-btn-danger.del").click(function (e) {
+        e.stopPropagation();
+        var msgid = $(e.target).attr("data-id");
+        console.log(msgid);
+        console.log(msg);
+        for (let i = 0; i < msg.length; i++) {
+          if (msg[i].id == msgid) msg.splice(i, 1);
+        }
+        //long();
+        $(`.cart-item[data-id=${msgid}]`).remove()
+        zj = 0;
+        zs = 0;
+        for (const m of msg) {
+          if (m.cb == true) {
+            zj += m.price * m.count;
+            zs += m.count;
+          }
+        }
+        $("#zpris").html(zj);
+        $("#zs").html(zs);
+        console.log(msg)
+      });
+      $(".sub").click(function (e) {
+        var msgid = $(e.target).attr("data-id");
+        console.log(msgid);
+        for (let i = 0; i < msg.length; i++) {
+          if (msg[i].id == msgid) {
+            if (msg[i].count == 0) {
+              return
+            } else {
+              msg[i].count--
+              $(`input[data-id=${msgid}]`).val(msg[i].count)
+            }
+          }
+        }
+        zj = 0;
+        zs = 0;
+        for (const m of msg) {
+          if (m.cb == true) {
+            zj += m.price * m.count;
+            zs += m.count;
+          }
+        }
+        $("#zpris").html(zj);
+        $("#zs").html(zs);
+        console.log(msg)
       })
-
-      $(".del").click(function (e) {
-        var i = $(e.target).attr("data-id");
-        console.log(i)
-        msg.splice(i - 1, 1);
-        long()
+      $(".add").click(function (e) {
+        var msgid = $(e.target).attr("data-id");
+        console.log(msgid);
+        for (let i = 0; i < msg.length; i++) {
+          if (msg[i].id == msgid) {
+            msg[i].count++
+            $(`input[data-id=${msgid}]`).val(msg[i].count)
+          }
+        }
+        zj = 0;
+        zs = 0;
+        for (const m of msg) {
+          if (m.cb == true) {
+            zj += m.price * m.count;
+            zs += m.count;
+          }
+        }
+        $("#zpris").html(zj);
+        $("#zs").html(zs);
+        console.log(msg)
       })
-
     }
-  })
-
-})
+  });
+});
