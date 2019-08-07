@@ -33,14 +33,16 @@ $(document).ready(function () {
         <div class="cart-item" data-id="${res.id}">
           <div class="leftImgText">
            <input type="checkbox" ${res.cb ? "checked" : ""} data-id="${
-            res.id
-          }" class="select">
+          res.id
+        }" class="select">
            <img src="${res.img_url}">
            <div class="price">${res.title}</div>
           <div class="sl">
-            <button class="sub" data-id="${res.id}">-</button><input type ="text" data-id="${res.id}" value="${
-            res.count
-          }">
+            <button class="sub" data-id="${
+              res.id
+            }">-</button><input type ="text" data-id="${res.id}" value="${
+          res.count
+        }">
             <button class="add" data-id="${res.id}">+</button></div>
            <div class="price">单价：${res.price}</div> 
            <div>小计：${res.price * res.count}</div>
@@ -61,6 +63,7 @@ $(document).ready(function () {
       //}
       //long();
       $("#selectALL").change(function (e) {
+        //全选
         var cb = e.target.checked;
         console.log(cb);
         for (var item of msg) {
@@ -81,9 +84,10 @@ $(document).ready(function () {
         }
         $("#zpris").html(zj);
         $("#zs").html(zs);
-        console.log(msg)
+        console.log(msg);
       });
       $(".select").change(function (e) {
+        //单选
         e.stopPropagation();
         var cb = e.target.checked;
         var msgid = $(e.target).attr("data-id");
@@ -118,10 +122,11 @@ $(document).ready(function () {
         }
         $("#zpris").html(zj);
         $("#zs").html(zs);
-        console.log(msg)
+        console.log(msg);
       });
 
       $(".layui-btn.layui-btn-danger.del").click(function (e) {
+        //单删
         e.stopPropagation();
         var msgid = $(e.target).attr("data-id");
         console.log(msgid);
@@ -130,7 +135,7 @@ $(document).ready(function () {
           if (msg[i].id == msgid) msg.splice(i, 1);
         }
         //long();
-        $(`.cart-item[data-id=${msgid}]`).remove()
+        $(`.cart-item[data-id=${msgid}]`).remove();
         zj = 0;
         zs = 0;
         for (const m of msg) {
@@ -141,18 +146,41 @@ $(document).ready(function () {
         }
         $("#zpris").html(zj);
         $("#zs").html(zs);
-        console.log(msg)
+        console.log(msg);
+      });
+      $(".delall").click(function () {
+        //多删
+        var str = ""; //创建变量保存删除商品id
+        for (let i = 0; i < msg.length; i++) {
+          if (msg[i].cb) {
+            $(`.cart-item[data-id=${msg[i].id}]`).remove();
+            str += msg[i].id + ","
+            msg.splice(i, 1, "");
+          }
+        }
+        var arr = []
+        for (let i = 0; i < msg.length; i++) {
+          if (!msg[i] == "") {
+            arr.push(msg[i])
+          }
+        }
+        msg = arr
+        console.log(str)
+        $("#zpris").html(0);
+        $("#zs").html(0);
+        console.log(msg);
       });
       $(".sub").click(function (e) {
+        //减
         var msgid = $(e.target).attr("data-id");
         console.log(msgid);
         for (let i = 0; i < msg.length; i++) {
           if (msg[i].id == msgid) {
             if (msg[i].count == 0) {
-              return
+              return;
             } else {
-              msg[i].count--
-              $(`input[data-id=${msgid}]`).val(msg[i].count)
+              msg[i].count--;
+              $(`input[data-id=${msgid}]`).val(msg[i].count);
             }
           }
         }
@@ -166,15 +194,16 @@ $(document).ready(function () {
         }
         $("#zpris").html(zj);
         $("#zs").html(zs);
-        console.log(msg)
-      })
+        console.log(msg);
+      });
       $(".add").click(function (e) {
+        //加
         var msgid = $(e.target).attr("data-id");
         console.log(msgid);
         for (let i = 0; i < msg.length; i++) {
           if (msg[i].id == msgid) {
-            msg[i].count++
-            $(`input[data-id=${msgid}]`).val(msg[i].count)
+            msg[i].count++;
+            $(`input[data-id=${msgid}]`).val(msg[i].count);
           }
         }
         zj = 0;
@@ -187,8 +216,8 @@ $(document).ready(function () {
         }
         $("#zpris").html(zj);
         $("#zs").html(zs);
-        console.log(msg)
-      })
+        console.log(msg);
+      });
     }
   });
 });
