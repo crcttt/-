@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   //用户信息
   var un = sessionStorage.getItem("uname");
   if (un) {
@@ -14,11 +14,16 @@ $(function() {
       <li class="dinglan-left myscheng2"><a href="javascript:;">我的商城</a></li>`;
     $("#msg").html(str);
   }
+  $("#doSearch").click(function () {
+    var search = $("#search").val()
+    location.href = "products.html?search=" + search
+  })
+
 });
 
 function loginout() {
   sessionStorage.removeItem("uname");
-  setInterval(function() {
+  setInterval(function () {
     location.href = "index.html";
   }, 500);
 }

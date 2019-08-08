@@ -45,7 +45,7 @@ $(document).ready(function () {
         }">
             <button class="add" data-id="${res.id}">+</button></div>
            <div class="price">单价：${res.price}</div> 
-           <div>小计：${res.price * res.count}</div>
+           <div>小计：<span data-id="${res.id}">${res.price * res.count}</span></div>
           </div>
           <button class="layui-btn layui-btn-danger del" data-id="${
             res.id
@@ -176,11 +176,12 @@ $(document).ready(function () {
         console.log(msgid);
         for (let i = 0; i < msg.length; i++) {
           if (msg[i].id == msgid) {
-            if (msg[i].count == 0) {
+            if (msg[i].count == 1) {
               return;
             } else {
               msg[i].count--;
               $(`input[data-id=${msgid}]`).val(msg[i].count);
+              $(`span[data-id=${msgid}]`).html(msg[i].count * msg[i].price);
             }
           }
         }
@@ -204,6 +205,7 @@ $(document).ready(function () {
           if (msg[i].id == msgid) {
             msg[i].count++;
             $(`input[data-id=${msgid}]`).val(msg[i].count);
+            $(`span[data-id=${msgid}]`).html(msg[i].count * msg[i].price);
           }
         }
         zj = 0;
