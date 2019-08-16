@@ -1,6 +1,7 @@
 $(document).ready(function () {
   var str = decodeURI(location.search)
   console.log(location.href)
+  //str=str.slice(1)
   str = str.split('?')
   var search = str[1].split('=')
   search = search[1]
